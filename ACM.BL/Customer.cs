@@ -20,6 +20,8 @@ namespace ACM.BL
         public string FirstName { get; set; }
         private string _lastName;
         public string EmailAddress { get; set; }
+        public string HomeAddress { get; set; }
+        public string WorkAddress { get; set; }
         public int CustomerID { get; private set; }
         public static int InstanceCount { get; set; }
         public string FullName
@@ -50,21 +52,7 @@ namespace ACM.BL
                 _lastName = value;
             }
         }
-        //retrieve one customer
-        public Customer Retrieve(int customerID)
-        {
-            return new Customer();
-        }
-        public List<Customer> Retrieve()
-        {
-            return new List<Customer>();
-
-        }
-        //saves the current customer
-        public bool Save()
-        {
-            return true;
-        }
+        
         //validate the customer data
         public bool Validate()
         {

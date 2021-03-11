@@ -8,7 +8,6 @@ namespace ACM.BL
         {
                 
         }
-
         public Order(int OrderId)
         {
             OrderId = OrderId;
@@ -21,16 +20,6 @@ namespace ACM.BL
             var isValid = true;
             if (OrderDate == null) isValid = false;
             return isValid;
-        }
-
-        public Order Retrieve(int orderId)
-        {
-            return new Order();
-        }
-
-        public bool Save()
-        {
-            return true;
         }
     }
 }

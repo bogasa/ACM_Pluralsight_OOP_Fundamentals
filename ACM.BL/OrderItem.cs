@@ -6,7 +6,6 @@
         {
             
         }
-
         public OrderItem(int orderItemId)
         {
             OrderItemId = OrderItemId;
@@ -24,12 +23,10 @@
             if (PurchasePrice == null) isValid = false;
             return isValid;
         }
-
         public OrderItem Retrieve(int orderItemId)
         {
             return new OrderItem();
         }
-
         public bool Save()
         {
             return true;
