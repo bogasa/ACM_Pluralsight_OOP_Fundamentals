@@ -8,6 +8,15 @@ namespace ACM.BL
 {
     public class Customer
     {
+        public Customer()
+        {
+            
+        }
+
+        public Customer(int customerId)
+        {
+            customerId = customerId;
+        }
         public string FirstName { get; set; }
         private string _lastName;
         public string EmailAddress { get; set; }
@@ -30,7 +39,6 @@ namespace ACM.BL
                 return fullName;
             }
         }
-
         public string LastName
         {
             get
@@ -42,19 +50,16 @@ namespace ACM.BL
                 _lastName = value;
             }
         }
-
         //retrieve one customer
         public Customer Retrieve(int customerID)
         {
             return new Customer();
         }
-
         public List<Customer> Retrieve()
         {
             return new List<Customer>();
 
         }
-
         //saves the current customer
         public bool Save()
         {

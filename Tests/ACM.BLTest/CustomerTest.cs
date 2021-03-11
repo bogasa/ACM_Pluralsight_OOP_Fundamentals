@@ -11,7 +11,7 @@ namespace ACM.BLTest
         public void FullNameTestValid()
         {
             // Arrange
-            var customer = new Customer {FirstName = "Bogdan", LastName = "Asaftei" };
+            var customer = new Customer {FirstName = "Bogdan", LastName = "Asaftei"};
             string expected = "Asaftei, Bogdan";
 
             // Act
@@ -25,7 +25,7 @@ namespace ACM.BLTest
         public void FullNameFirstNameEmpty()
         {
             // Arrange
-            var customer = new Customer {LastName = "Asaftei" };
+            var customer = new Customer {LastName = "Asaftei"};
             string expected = "Asaftei";
 
             // Act
@@ -39,7 +39,7 @@ namespace ACM.BLTest
         public void FullNameLastNameEmpty()
         {
             // Arrange
-            var customer = new Customer { FirstName = "Bogdan" };
+            var customer = new Customer {FirstName = "Bogdan"};
             string expected = "Bogdan";
 
             // Act
@@ -66,7 +66,7 @@ namespace ACM.BLTest
             Customer.InstanceCount += 1;
 
             // Act
-            
+
             // Assert
             Assert.AreEqual(3, Customer.InstanceCount);
         }
@@ -85,6 +85,21 @@ namespace ACM.BLTest
             var actual = customer.Validate();
             //assert
             Assert.AreEqual(expect, actual);
+        }
+
+        [TestMethod]
+        public void ValidateMissingLastName()
+        {
+            //arrange
+            var customer = new Customer
+            {
+                EmailAddress = "bogasa@gmail.com"
+            };
+            var expected = false;
+            //act
+            var actual = customer.Validate();
+            //assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
