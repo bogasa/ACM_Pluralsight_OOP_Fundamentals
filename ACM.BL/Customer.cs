@@ -15,14 +15,14 @@ namespace ACM.BL
 
         public Customer(int customerId)
         {
-            customerId = customerId;
+            CustomerId = customerId;
         }
+        public int CustomerId { get; private set; }
         public string FirstName { get; set; }
         private string _lastName;
         public string EmailAddress { get; set; }
         public string HomeAddress { get; set; }
         public string WorkAddress { get; set; }
-        public int CustomerID { get; private set; }
         public static int InstanceCount { get; set; }
         public string FullName
         {
