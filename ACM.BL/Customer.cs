@@ -8,7 +8,7 @@ namespace ACM.BL
 {
     public class Customer
     {
-        public Customer()
+        public Customer(): this(0)
         {
             
         }
@@ -16,13 +16,14 @@ namespace ACM.BL
         public Customer(int customerId)
         {
             CustomerId = customerId;
+            AddressList = new List<Address>();
         }
         public int CustomerId { get; private set; }
+        public int CustomerType { get; set; }
         public string FirstName { get; set; }
         private string _lastName;
         public string EmailAddress { get; set; }
-        public string HomeAddress { get; set; }
-        public string WorkAddress { get; set; }
+        public List<Address> AddressList { get; set; }
         public static int InstanceCount { get; set; }
         public string FullName
         {
@@ -52,7 +53,12 @@ namespace ACM.BL
                 _lastName = value;
             }
         }
-        
+
+        public override string ToString()
+        {
+            return FullName;
+        }
+
         //validate the customer data
         public bool Validate()
         {

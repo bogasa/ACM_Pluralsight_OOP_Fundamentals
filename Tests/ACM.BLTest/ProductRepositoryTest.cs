@@ -25,5 +25,23 @@ namespace ACM.BLTest
             Assert.AreEqual(expected.ProductDescription, actual.ProductDescription);
             Assert.AreEqual(expected.ProductName, actual.ProductName);
         }
+
+        [TestMethod]
+        public void SaveTestM()
+        {
+            //arrange
+            var productRepository = new ProductRepository();
+            var updateProduct = new Product(2)
+            {
+                CurrentPrice = null,
+                ProductDescription = "Assorted Size Set of 4 Bright Yellow Mini Sunflowers",
+                ProductName = "Sunflowers",
+                HasChanges = true
+            };
+            //act
+            var actual = productRepository.Save(updateProduct);
+            //assert
+            Assert.AreEqual(false, actual);
+        }
     }
 }
